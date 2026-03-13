@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello pretty riya</title>
+<style>
+    
+body{
+    margin: 0;
+    font-family: Arial;
+    color: #020617;
+    overflow: hidden;
+
+}
+
+/* animated gradient background */
+.bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(270deg, #00aeff,
+    #2f005a, #c019aa) ;
+    background-size:600% 600% ;
+    animation: move 6s linear infinite;
+    z-index:-1;
+
+
+}
+    @keyframes move{
+        0%
+        {background-position:0% 50% ;}
+        50%{background-position: 100% 50%;}
+        100%{background-position:0% 50%;}
+    }
+    /* nav bar */
+    nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background:rgba(0, 0, 0, 0, 4 );
+        backdrop-filter:blur(10px);
+        }
+
+        .menu a{
+            margin-left: 20px;
+            cursor: pointer;
+
+        }
+
+        .menu a:hover{
+            color: #38bdf8;
+
+        }
+
+        /* pages */
+        .page{
+            display:none;
+            min-height: 100vh;
+            text-align:center;
+            padding-top: 120px;
+            animation:fade 0.5s;
+        }
+
+
+        .active{
+            display: block;
+        }
+
+        @keyframes fade{
+            from{opacity:0;
+            transform:translateY(20px);}
+            to{opacity:1;}
+        }
+
+        /* hero */
+        h1{
+            font-size:55px;
+        }
+        
+.card{
+    background:rgba(255,255,255 , 0.1);
+    padding: 40PX;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    width: 300px;
+    margin: auto;
+}
+
+/* service cards */
+
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* button */
+button{
+    padding: 14px 35px;
+    border: none ;
+    border-radius: 30px;
+    background: #38bdf8;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* input */
+input, textarea{
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/* mobile */
+
+@media(max-width:700px){
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    
+}
+h1{
+    font-size: 35px;
+}
+}
+</style>
+</head>
+
+    <body>
+        <div class="bg"></div>
+    <nav>
+        <h2><i></i>hello little girl</i></h2>
+
+        <div class="menu">
+            <a onclick="show('home')">Home</a>
+            <a onclick="show('about')">...!!!</a>
+             <a onclick="show('Services')">when i chat to you</a>
+              <a onclick="show('contact')">how you think about me</a>
+        </div>
+    </nav>
+
+    <section id="home" class="page active">
+        <h1>the intelligent girl</h1>
+        <div id="typing"></div>
+
+        <button 
+        onclick="show('about')">Explore</button>
+    </section>
+
+    <section id="about" class="page">
+        <div class="card">
+            <h1>About</h1>
+            <p>
+                you are intelligent, mature, emotionally aware,
+                thoughtful, coutious, and positive toward you
+            </p>
+
+
+        </div>
+
+    </section>
+    <section id="Services" class="page">
+<h1>i feel peace and good </h1>
+<div class="card">
+    <div class="card">
+        <h3>thinking about you</h3>
+        <p>you always make me smile.</p>
+    </div>
+    <dev class="card">
+        <h3>i always with you</h3>
+        <p>i wish that our frienship good</p>
+
+    </dev>
+</div>
+</section>
+<section id="contact" class="page">
+    <div class="card">
+        <h1>contact</h1>
+
+        <input placeholder="you can say about me">
+        <input placeholder="you type the unlike things">
+
+        <textarea placeholder="which i can improve in myself "></textarea>
+        <button onclick="send()">send</button>
+    </div>
+</section>
+<script>
+    function show(page){
+    document.querySelectorAll(".page").forEach
+    (p=>{
+        p.classList.remove("active")
+    
+    })
+    document.getElementById(page).classList.add("active")
+}
+
+function send(){
+    alert("can you say me on whatsapp same words")
+}
+
+/* typing animation */
+let text="HTML CSS Javascript developer"
+let i=0
+
+function type(){
+    if(i<text.lenghth){
+        document.getElementById("typing").innerHTML+=text.chatAt(i)
+        i++
+        settimeout(type,50)
+    }
+}
+
+type()
+</script>
+</body>
+</html>
